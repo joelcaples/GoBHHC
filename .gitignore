@@ -3,3 +3,12 @@
 ################################################################################
 
 /.vs/GoBHHC
+/GoBHHC/bin/Debug/netcoreapp3.0
+/GoBHHC/obj
+/GoBHHC.Repository/bin/Debug/netcoreapp3.0
+/GoBHHC.Repository/obj/Debug/netcoreapp3.0
+/GoBHHC.Repository/obj
+/GoBHHC.Shared/bin/Debug/netstandard2.0
+/GoBHHC.Shared/obj
+/GoBHHC.Tests/bin/Debug/netcoreapp3.0
+/GoBHHC.Tests/obj

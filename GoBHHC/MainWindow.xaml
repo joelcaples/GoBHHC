@@ -1,0 +1,25 @@
+﻿<Window x:Class="GoBHHC.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GoBHHC"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <StackPanel>
+        <StackPanel>
+            <StackPanel>
+                <TextBlock>Here are the reasons</TextBlock>
+            </StackPanel>
+            <StackPanel>
+                <TextBlock>New Technology</TextBlock>
+            </StackPanel>
+            <StackPanel>
+                <TextBlock>Growing team</TextBlock>
+            </StackPanel>
+            <StackPanel>
+                <TextBlock>Free beer</TextBlock>
+            </StackPanel>
+        </StackPanel>
+    </StackPanel>
+</Window>

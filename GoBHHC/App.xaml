@@ -4,6 +4,78 @@
              xmlns:local="clr-namespace:GoBHHC"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        
+        <Style x:Key="WindowBorder" TargetType="Border">
+            <Setter Property="CornerRadius" Value="10" />
+            <Setter Property="Background" Value="Black" />
+        </Style>
+
+        <Style x:Key="WidgetBorder" TargetType="Border">
+            <Setter Property="BorderBrush" Value="DarkGreen" />
+            <Setter Property="BorderThickness" Value="2" />
+            <Setter Property="CornerRadius" Value="12" />
+            <Setter Property="Margin" Value="25, 0, 25,25" />
+        </Style>
+
+        <Style x:Key="WindowLabel" TargetType="Label">
+            <Setter Property="FontSize" Value="40" />
+            <Setter Property="Foreground" Value="SeaGreen" />
+            <Setter Property="FontWeight" Value="Bold" />
+            <Setter Property="Margin" Value="25,0,25,0" />
+        </Style>
+
+        <Style x:Key="WidgetLabel" TargetType="Label">
+            <Setter Property="FontSize" Value="20" />
+            <Setter Property="Foreground" Value="SeaGreen" />
+            <Setter Property="FontWeight" Value="Bold" />
+            <Setter Property="Margin" Value="25,0,25,0" />
+        </Style>
+        <Style x:Key="WidgetGridContainer" TargetType="Grid">
+            <Setter Property="HorizontalAlignment" Value="Stretch" />
+        </Style>
+        <Style x:Key="GridTextStyle" TargetType="TextBox">
+            <Setter Property="Width" Value="auto" />
+            <Setter Property="Height" Value="20" />
+            <Setter Property="Margin" Value="5,1,5,1" />
+            <Setter Property="Foreground" Value="#FF87B34F" />
+            <Setter Property="Background" Value="#000000" />
+            <Setter Property="BorderThickness" Value="0"/>
+        </Style>
+        <Style x:Key="GridTextReadOnlyStyle" TargetType="TextBox" BasedOn="{StaticResource GridTextStyle}">
+            <Setter Property="IsReadOnly" Value="True"/>
+        </Style>
+
+        <Style x:Key="WidgetGridHeaderLabelStyle" TargetType="Label">
+            <Setter Property="Height" Value="26" />
+            <Setter Property="Margin" Value="5,0,5,0" />
+            <Setter Property="Foreground" Value="#FF87B34F" />
+            <Setter Property="Background" Value="DarkGreen" />
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+        </Style>
+
+        <Style x:Key="WidgetGridTopBorderStyle" TargetType="Border">
+            <Setter Property="Background" Value="DarkGreen"/>
+            <Setter Property="CornerRadius" Value="10,10,0,0"  />
+            <Setter Property="BorderThickness" Value="0" />
+            <Setter Property="Padding" Value="4" />
+            <Setter Property="Margin" Value="0,0,0,0" />
+            <Setter Property="HorizontalAlignment" Value="Stretch"></Setter>
+        </Style>
+
+        <Style x:Key="WidgetGridHeaderStyle" TargetType="Grid">
+            <Setter Property="Height" Value="26" />
+            <Setter Property="Margin" Value="0,0,0,0" />
+            <Setter Property="Background" Value="DarkGreen" />
+            <Setter Property="HorizontalAlignment" Value="Stretch"/>
+        </Style>
+
+        <Style x:Key="ButtonStyle" TargetType="Button">
+            <Setter Property="BorderBrush" Value="DarkSlateBlue" />
+            <Setter Property="Background" Value="DarkGreen" />
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Margin" Value="2"/>
+        </Style>
+
     </Application.Resources>
 </Application>

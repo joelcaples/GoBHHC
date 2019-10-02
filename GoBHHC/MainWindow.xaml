@@ -7,37 +7,61 @@
         xmlns:viewmodels="clr-namespace:GoBHHC.ViewModels"
         xmlns:interfaces="clr-namespace:GoBHHC.Shared.Interfaces;assembly=GoBHHC.Shared"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <StackPanel>
+        Title="" Height="450" Width="800">
 
-        <ScrollViewer DockPanel.Dock="Top">
-            <ItemsControl x:Name="ListMgrItemsControl" ItemsSource="{Binding Path=ListMgrItemsCollectionViewSource.View}">
-                <ItemsControl.ItemsPanel>
-                    <ItemsPanelTemplate>
-                        <UniformGrid Columns="1" IsItemsHost="True"/>
-                    </ItemsPanelTemplate>
-                </ItemsControl.ItemsPanel>
-                <ItemsControl.ItemTemplate>
-                    <DataTemplate DataType="{x:Type interfaces:IListMgrItem}">
-                        <Grid Name="ItemsGrid" Background="White">
+    <Border Style="{StaticResource WindowBorder}" >
+
+        <DockPanel>
+            <Label Content="BHHC List Manger" Style="{StaticResource WindowLabel}" DockPanel.Dock="Top" />
+            <Label Content="List of Reasons" Style="{StaticResource WidgetLabel}" DockPanel.Dock="Top" />
+            <!--<Border DockPanel.Dock="Bottom" HorizontalAlignment="Right" Margin="0,0,40,10">
+                <Button Style="{StaticResource ButtonStyle}" Content="Rebuild Database" Width="100"/>
+            </Border>-->
+            <Border Style="{StaticResource WidgetBorder}">
+                <DockPanel>
+                    <Border Style="{StaticResource WidgetGridTopBorderStyle}" DockPanel.Dock="Top">
+                        <Grid DockPanel.Dock="Top" Style="{StaticResource WidgetGridHeaderStyle}">
                             <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="50"/>
-                                <ColumnDefinition Width="50"/>
-                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="50" />
+                                <ColumnDefinition Width="50" />
+                                <ColumnDefinition Width="*" />
                             </Grid.ColumnDefinitions>
-                            <Button 
-                                Content="Delete" 
-                                Command="{Binding DataContext.DeleteCommand, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ItemsControl}}}" 
-                                CommandParameter="{Binding}"
-                            />
-
-                            <TextBox Grid.Column="1" Text="{Binding Path=ListMgrID}"/>
-                            <TextBox Grid.Column="2" Text="{Binding Description, Mode=TwoWay, UpdateSourceTrigger=LostFocus}"/>
+                            <StackPanel Orientation="Horizontal" Grid.Column="0">
+                                <Label Style="{StaticResource WidgetGridHeaderLabelStyle}" Content=""/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal" Grid.Column="1">
+                                <Label Style="{StaticResource WidgetGridHeaderLabelStyle}" Content="Id"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal" Grid.Column="2" Grid.ColumnSpan="2">
+                                <Label Style="{StaticResource WidgetGridHeaderLabelStyle}"   Content="Description"/>
+                            </StackPanel>
                         </Grid>
-                    </DataTemplate>
-                </ItemsControl.ItemTemplate>
-            </ItemsControl>
-        </ScrollViewer>
-
-    </StackPanel>
+                    </Border>
+                    <ScrollViewer>
+                        <Grid Style="{StaticResource WidgetGridContainer}">
+                            <ItemsControl x:Name="ListMgrItemsControl" ItemsSource="{Binding Path=ListMgrItemsCollectionViewSource.View}">
+                                <ItemsControl.ItemTemplate>
+                                    <DataTemplate DataType="{x:Type interfaces:IListMgrItem}">
+                                        <Grid Name="ItemsGrid">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="50"/>
+                                                <ColumnDefinition Width="50"/>
+                                                <ColumnDefinition Width="*"/>
+                                            </Grid.ColumnDefinitions>
+                                            <Button 
+                                                Content="Delete" 
+                                                Command="{Binding DataContext.DeleteCommand, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ItemsControl}}}" 
+                                                CommandParameter="{Binding}" Style="{StaticResource ButtonStyle}" />
+                                            <TextBox Grid.Column="1" Style="{StaticResource GridTextReadOnlyStyle}" Text="{Binding Path=ListMgrID}"/>
+                                            <TextBox Grid.Column="2" Style="{StaticResource GridTextStyle}" Text="{Binding Description, Mode=TwoWay, UpdateSourceTrigger=LostFocus}"/>
+                                        </Grid>
+                                    </DataTemplate>
+                                </ItemsControl.ItemTemplate>
+                            </ItemsControl>
+                        </Grid>
+                    </ScrollViewer>
+                </DockPanel>
+            </Border>
+        </DockPanel>
+    </Border>
 </Window>

@@ -6,6 +6,7 @@ using System.Windows.Input;
 using GoBHHC.Commands;
 using GoBHHC.Repository;
 using GoBHHC.Shared.Interfaces;
+using GoBHHC.Shared.Models;
 
 namespace GoBHHC.ViewModels {
 
@@ -49,6 +50,16 @@ namespace GoBHHC.ViewModels {
             get {
                 return _deleteCommand ?? (_deleteCommand = new RelayCommand(lmi => {
                     _repository.DeleteListMgrItem(((IListMgrItem)lmi).ListMgrID);
+                    LoadListMgrItemsList();
+                }));
+            }
+        }
+
+        private ICommand _addItemCommand;
+        public ICommand AddItemCommand {
+            get {
+                return _addItemCommand ?? (_addItemCommand = new RelayCommand(lmi => {
+                    _repository.AddListMgrItem(new ListMgrItem() { Description = "New Item" });
                     LoadListMgrItemsList();
                 }));
             }

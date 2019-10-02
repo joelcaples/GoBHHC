@@ -15,7 +15,10 @@
             <Label Content="BHHC List Manger" Style="{StaticResource WindowLabel}" DockPanel.Dock="Top" />
             <Label Content="List of Reasons" Style="{StaticResource WidgetLabel}" DockPanel.Dock="Top" />
             <Border DockPanel.Dock="Bottom" HorizontalAlignment="Right" Margin="0,0,40,10">
-                <Button Style="{StaticResource ButtonStyle}" Command="{Binding BuildDemoDataCommand}" Content="Rebuild Database" Width="100"/>
+                <StackPanel Orientation="Horizontal">
+                    <Button Style="{StaticResource ButtonStyle}" Command="{Binding AddItemCommand}" Content="Add New Item" Width="100"/>
+                    <Button Style="{StaticResource ButtonStyle}" Command="{Binding BuildDemoDataCommand}" Content="Rebuild Database" Width="100"/>
+                </StackPanel>
             </Border>
             <Border Style="{StaticResource WidgetBorder}">
                 <DockPanel>

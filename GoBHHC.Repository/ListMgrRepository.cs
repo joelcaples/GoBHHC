@@ -71,5 +71,44 @@ namespace GoBHHC.Repository {
 
             return affectedRows;
         }
+
+        public void BuildSchema() {
+
+            SQLiteCommand cmd;
+            cmd = _connection.CreateCommand();
+
+            cmd.CommandText = "CREATE TABLE ListMgrItems (ListMgrID INTEGER PRIMARY KEY AUTOINCREMENT, Description VARCHAR(255))";
+            cmd.ExecuteNonQuery();
+        }
+
+        public void InsertDemoData() {
+
+            SQLiteCommand cmd;
+            cmd = _connection.CreateCommand();
+
+            cmd.CommandText = "DELETE FROM ListMgrItems;";
+            cmd.ExecuteNonQuery();
+
+            cmd.CommandText = "INSERT INTO ListMgrItems (Description) VALUES ('FREE BEER');";
+            cmd.ExecuteNonQuery();
+
+            cmd.CommandText = "INSERT INTO ListMgrItems (Description) VALUES ('LIFETIME SUBSCRIPTION TO OK MAGAZINE');";
+            cmd.ExecuteNonQuery();
+
+            cmd.CommandText = "INSERT INTO ListMgrItems (Description) VALUES ('GET TO SHARE AN OFFICE WITH WARREN');";
+            cmd.ExecuteNonQuery();
+
+            cmd.CommandText = "INSERT INTO ListMgrItems (Description) VALUES ('LOCATION CLOSE TO QUAINT EATERIES');";
+            cmd.ExecuteNonQuery();
+
+            cmd.CommandText = "INSERT INTO ListMgrItems (Description) VALUES ('BECAUSE REASONS');";
+            cmd.ExecuteNonQuery();
+
+            cmd.CommandText = "INSERT INTO ListMgrItems (Description) VALUES ('THE DEAFENING SILENCE');";
+            cmd.ExecuteNonQuery();
+
+            cmd.CommandText = "INSERT INTO ListMgrItems (Description) VALUES ('OMAHA - It''s not for everyone');";
+            cmd.ExecuteNonQuery();
+        }
     }
 }

@@ -53,5 +53,15 @@ namespace GoBHHC.ViewModels {
                 }));
             }
         }
+
+        private ICommand _buildDemoDataCommand;
+        public ICommand BuildDemoDataCommand {
+            get {
+                return _buildDemoDataCommand ?? (_buildDemoDataCommand = new RelayCommand(lmi => {
+                    _repository.InsertDemoData();
+                    LoadListMgrItemsList();
+                }));
+            }
+        }
     }
 }

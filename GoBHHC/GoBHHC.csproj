@@ -6,4 +6,9 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\GoBHHC.Repository\GoBHHC.Repository.csproj" />
+    <ProjectReference Include="..\GoBHHC.Shared\GoBHHC.Shared.csproj" />
+  </ItemGroup>
+
 </Project>

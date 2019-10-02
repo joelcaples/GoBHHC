@@ -1,4 +1,6 @@
-﻿using System;
+﻿using GoBHHC.Repository;
+using GoBHHC.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,6 +24,7 @@ namespace GoBHHC
     {
         public MainWindow() {
             InitializeComponent();
+            DataContext = new MainWindowViewModel(RepositoryFactory.GetRepository());
         }
     }
 }

@@ -1,7 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel;
+using System.Windows;
 using System.Windows.Data;
-
+using System.Windows.Input;
+using GoBHHC.Commands;
 using GoBHHC.Repository;
 using GoBHHC.Shared.Interfaces;
 
@@ -28,9 +30,19 @@ namespace GoBHHC.ViewModels {
             OnPropertyChanged("ListMgrItemsCollectionViewSource");
         }
 
-        private List<IListMgrItem> ListMgrItemsList { get; set; }
+        public List<IListMgrItem> ListMgrItemsList { get; private set; }
 
         public CollectionViewSource ListMgrItemsCollectionViewSource { get; private set;}
 
+
+        private ICommand _deleteCommand;
+        public ICommand DeleteCommand {
+            get {
+                return _deleteCommand ?? (_deleteCommand = new RelayCommand(lmi => {
+                    _repository.DeleteListMgrItem(((IListMgrItem)lmi).ListMgrID);
+                    LoadListMgrItemsList();
+                }));
+            }
+        }
     }
 }

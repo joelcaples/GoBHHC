@@ -4,13 +4,14 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GoBHHC"
+        xmlns:viewmodels="clr-namespace:GoBHHC.ViewModels"
         xmlns:interfaces="clr-namespace:GoBHHC.Shared.Interfaces;assembly=GoBHHC.Shared"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <StackPanel>
 
         <ScrollViewer DockPanel.Dock="Top">
-            <ItemsControl ItemsSource="{Binding Path=ListMgrItemsCollectionViewSource.View}">
+            <ItemsControl x:Name="ListMgrItemsControl" ItemsSource="{Binding Path=ListMgrItemsCollectionViewSource.View}">
                 <ItemsControl.ItemsPanel>
                     <ItemsPanelTemplate>
                         <UniformGrid Columns="1" IsItemsHost="True"/>
@@ -21,10 +22,17 @@
                         <Grid Name="ItemsGrid" Background="White">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="50"/>
+                                <ColumnDefinition Width="50"/>
                                 <ColumnDefinition Width="*"/>
                             </Grid.ColumnDefinitions>
-                            <TextBox Grid.Column="0" Text="{Binding Path=ListMgrID}"/>
-                            <TextBox Grid.Column="1" Text="{Binding Path=Description}"/>
+                            <Button 
+                                Content="Delete" 
+                                Command="{Binding DataContext.DeleteCommand, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ItemsControl}}}" 
+                                CommandParameter="{Binding}"
+                            />
+
+                            <TextBox Grid.Column="1" Text="{Binding Path=ListMgrID}"/>
+                            <TextBox Grid.Column="2" Text="{Binding Path=Description}"/>
                         </Grid>
                     </DataTemplate>
                 </ItemsControl.ItemTemplate>

@@ -12,11 +12,11 @@ namespace GoBHHC.Tests {
 
         private const string DB_PATH = "test-database.db";
 
-        protected SQLiteConnection _context;
+        protected SQLiteConnection _connection;
 
         [OneTimeSetUp]
         public void GlobalSetup() {
-            CreateDb(_context = CreateConnection());
+            _connection = CreateConnection();
         }
 
         private SQLiteConnection CreateConnection() {

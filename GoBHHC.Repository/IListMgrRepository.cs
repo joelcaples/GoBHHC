@@ -1,16 +1,20 @@
-﻿using GoBHHC.Shared.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
+
+using GoBHHC.Shared.Interfaces;
 
 namespace GoBHHC.Repository {
     public interface IListMgrRepository {
 
-        public List<IListMgrItem> GetListMgrItems(string listKey);
+        public IListMgrItem AddListMgrItem(IListMgrItem listMgrItem);
 
-        public bool UpdateListMgrItem(IListMgrItem listMgrItem);
+        public int DeleteListMgrItem(int listMgrID);
 
-        public bool DeleteListMgrItem(string listKey);
+        public List<IListMgrItem> GetListMgrItems();
 
-        public bool AddListMgrItem(IListMgrItem listMgrItem);
+        public IListMgrItem GetListMgrItem(int listMgrID);
+
+        public int UpdateListMgrItem(IListMgrItem listMgrItem);
+
     }
 }

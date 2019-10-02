@@ -25,9 +25,18 @@ namespace GoBHHC.ViewModels {
 
         private void LoadListMgrItemsList() {
             ListMgrItemsList = _repository.GetListMgrItems();
+
+            foreach(var item in ListMgrItemsList) {
+                item.PropertyChanged += ListMgrItemUpdated;
+            }
+
             ListMgrItemsCollectionViewSource = new CollectionViewSource();
             ListMgrItemsCollectionViewSource.Source = ListMgrItemsList;
             OnPropertyChanged("ListMgrItemsCollectionViewSource");
+        }
+
+        private void ListMgrItemUpdated(object sender, PropertyChangedEventArgs e) {
+            _repository.UpdateListMgrItem((IListMgrItem)sender);
         }
 
         public List<IListMgrItem> ListMgrItemsList { get; private set; }

@@ -4,7 +4,7 @@ using System.Data.SQLite;
 using System.Linq;
 
 using Dapper;
-
+using GoBHHC.Shared;
 using GoBHHC.Shared.Interfaces;
 using GoBHHC.Shared.Models;
 
@@ -38,6 +38,9 @@ namespace GoBHHC.Repository {
                     ListMgrID = listMgrID
                 });
 
+            if (affectedRows == 0)
+                throw new NotFoundException();
+
             return affectedRows;
         }
 
@@ -68,6 +71,9 @@ namespace GoBHHC.Repository {
             var sql = @"UPDATE ListMgrItems SET Description = @Description WHERE ListMgrID = @ListMgrID";
 
             var affectedRows = _connection.Execute(sql, listMgrItem);
+
+            if (affectedRows == 0)
+                throw new NotFoundException();
 
             return affectedRows;
         }

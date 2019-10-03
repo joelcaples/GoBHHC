@@ -17,6 +17,5 @@ namespace GoBHHC.Repository {
         public int UpdateListMgrItem(IListMgrItem listMgrItem);
 
         public void InsertDemoData();
-
     }
 }

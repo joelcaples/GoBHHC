@@ -12,3 +12,5 @@
 /GoBHHC.Shared/obj
 /GoBHHC.Tests/bin/Debug/netcoreapp3.0
 /GoBHHC.Tests/obj
+/GoBHHC.WebAPI/obj
+/GoBHHC.WebAPI/bin/Debug/netcoreapp3.0

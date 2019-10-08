@@ -24,7 +24,7 @@ namespace GoBHHC
     {
         public MainWindow() {
             InitializeComponent();
-            DataContext = new MainWindowViewModel(RepositoryFactory.GetRepository());
+            DataContext = new MainWindowViewModel(RepositoryFactory.GetRepository(ListMgrEnvironment.Production));
         }
     }
 }

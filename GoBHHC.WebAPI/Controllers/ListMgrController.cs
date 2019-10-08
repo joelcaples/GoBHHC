@@ -15,9 +15,12 @@ namespace GoBHHC.WebAPI.Controllers {
         private readonly ILogger<ListMgrController> _logger;
         private readonly IListMgrRepository _repository;
 
-        public ListMgrController(ILogger<ListMgrController> logger) {
+        public ListMgrController(
+            ILogger<ListMgrController> logger,
+            IListMgrRepository repository) {
+            
             _logger = logger;
-            _repository = RepositoryFactory.GetRepository();
+            _repository = repository;
         }
 
         // https://localhost:44363/api/ListMgr

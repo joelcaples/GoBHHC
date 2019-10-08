@@ -17,4 +17,9 @@ export class ListMgrItemService {
     this.messageService.add('ListMgrItemsService: fetched List Mgr Items');
     return of(LISTMGRITEMS);
   }
+
+  getListMgrItem(id: number): Observable<ListMgrItem> {
+    this.messageService.add(`ListMgrItemService: fetched List Mgr Item id=${id}`);
+    return of(LISTMGRITEMS.find(listMgrItem => listMgrItem.id === id));
+  }
 }

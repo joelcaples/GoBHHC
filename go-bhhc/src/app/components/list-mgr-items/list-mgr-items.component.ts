@@ -9,19 +9,12 @@ import { ListMgrItemService } from '../../services/list-mgr-item-service';
   styleUrls: ['./list-mgr-items.component.css']
 })
 export class ListMgrItemsComponent implements OnInit {
-
-  selectedListMgrItem: ListMgrItem;
-
   listMgrItems: ListMgrItem[];
 
   constructor(private listMgrItemService: ListMgrItemService) { }
 
   ngOnInit() {
     this.getListMgrItems();
-  }
-
-  onSelect(listMgrItem: ListMgrItem): void {
-    this.selectedListMgrItem = listMgrItem;
   }
 
   getListMgrItems(): void {

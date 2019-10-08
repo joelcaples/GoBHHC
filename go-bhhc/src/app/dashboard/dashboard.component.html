@@ -1,0 +1,9 @@
+<h3>Top Reasons</h3>
+<div class="grid grid-pad">
+  <a *ngFor="let listMgrItem of listMgrItems" class="col-1-4"
+      routerLink="/detail/{{listMgrItem.id}}">
+    <div class="module listMgrItem">
+      <h4>{{listMgrItem.description}}</h4>
+    </div>
+  </a>
+</div>

@@ -3,6 +3,11 @@ BHHC Demo App
 
 Application intended to show some basic techniques for writing .Net Core applications in 2019
 
+## Tools
+- Visual Studio 2019 Enterprise
+- VS Code
+- Postman
+
 ## Assemblies
 
 ### GoBHHC.exe (.Net Core 3.0) - WPF Gui

@@ -1,11 +1,14 @@
-<div *ngIf="list-mgr-item">
+<div *ngIf="listMgrItem">
 
-    <h2>{{list-mgr-item.description | uppercase}} Description</h2>
-    <div><span>id: </span>{{list-mgr-item.id}}</div>
+    <!-- <h2>{{listMgrItem.description | uppercase}} Details</h2> -->
+    <br/>
+    
+    <div><span>id: </span>{{listMgrItem.id}}</div>
     <div>
       <label>description:
-        <input [(ngModel)]="list-mgr-item.description" placeholder="description"/>
+        <input [(ngModel)]="listMgrItem.description" placeholder="description"/>
       </label>
     </div>
+    <button (click)="goBack()">go back</button>
   
   </div>

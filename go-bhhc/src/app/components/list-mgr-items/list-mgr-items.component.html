@@ -1,0 +1,11 @@
+<h2>Reasons</h2>
+
+<ul class="list-mgr-items">
+  <li *ngFor="let listMgrItem of listMgrItems"
+    [class.selected]="listMgrItem === selectedListMgrItem"
+    (click)="onSelect(listMgrItem)">
+    <span class="badge">{{listMgrItem.id}}</span> {{listMgrItem.description}}
+  </li>
+</ul>
+
+<app-list-mgr-item-detail [list-mgr-item]="selectedListMgrItem"></app-list-mgr-item-detail>

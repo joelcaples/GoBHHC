@@ -1,0 +1,11 @@
+<div *ngIf="list-mgr-item">
+
+    <h2>{{list-mgr-item.description | uppercase}} Description</h2>
+    <div><span>id: </span>{{list-mgr-item.id}}</div>
+    <div>
+      <label>description:
+        <input [(ngModel)]="list-mgr-item.description" placeholder="description"/>
+      </label>
+    </div>
+  
+  </div>

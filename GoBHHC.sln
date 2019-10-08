@@ -11,7 +11,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GoBHHC.Repository", "GoBHHC
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GoBHHC.Shared", "GoBHHC.Shared\GoBHHC.Shared.csproj", "{20BFD93A-8283-4D0A-AAFE-1A4035655C13}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GoBHHC.WebAPI", "GoBHHC.WebAPI\GoBHHC.WebAPI.csproj", "{D227B011-6245-44E9-B238-BE1FE3ED4A1E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GoBHHC.WebAPI", "GoBHHC.WebAPI\GoBHHC.WebAPI.csproj", "{D227B011-6245-44E9-B238-BE1FE3ED4A1E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{914941AF-EF2D-4F09-9EB8-817E5D3DAA18}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

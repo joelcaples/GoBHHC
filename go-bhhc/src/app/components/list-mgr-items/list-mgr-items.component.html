@@ -1,8 +1,21 @@
 <h2>Reasons</h2>
 
+<div>
+  <label>Item:
+    <input #listMgrItemDescription />
+  </label>
+  <!-- (click) passes input value to add() and then clears the input -->
+  <button (click)="add(listMgrItemDescription.value); listMgrItemDescription.value=''">
+    add
+  </button>
+</div>
+
 <ul class="listMgrItems">
   <li *ngFor="let listMgrItem of listMgrItems">
     <a routerLink="/detail/{{listMgrItem.id}}">
       <span class="badge">{{listMgrItem.id}}</span> {{listMgrItem.description}}
-    </a>  </li>
+    </a>
+    <button class="delete" title="delete listMgrItem"
+      (click)="delete(listMgrItem)">x</button>
+  </li>
 </ul>

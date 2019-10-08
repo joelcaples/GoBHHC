@@ -19,6 +19,21 @@ export class ListMgrItemsComponent implements OnInit {
 
   getListMgrItems(): void {
     this.listMgrItemService.getListMgrItems()
-        .subscribe(listMgrItems => this.listMgrItems = listMgrItems);
+    .subscribe(listMgrItems => this.listMgrItems = listMgrItems);
   }
+
+  add(description: string): void {
+    description = description.trim();
+    if (!description) { return; }
+    this.listMgrItemService.addListMgrItem({ description } as ListMgrItem)
+      .subscribe(listMgrItem => {
+        this.listMgrItems.push(listMgrItem);
+      });
+  }
+
+  delete(listMgrItem: ListMgrItem): void {
+    this.listMgrItems = this.listMgrItems.filter(h => h !== listMgrItem);
+    this.listMgrItemService.deleteListMgrItem(listMgrItem).subscribe();
+  }
+
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 
@@ -11,7 +11,7 @@ import { ListMgrItemService} from 'src/app/services/list-mgr-item-service'
   styleUrls: ['./list-mgr-item-detail.component.css']
 })
 export class ListMgrItemDetailComponent implements OnInit {
-  'listMgrItem': ListMgrItem;
+  @Input() listMgrItem: ListMgrItem;
 
   constructor(
     private route: ActivatedRoute,
@@ -31,5 +31,10 @@ export class ListMgrItemDetailComponent implements OnInit {
 
   goBack(): void {
     this.location.back();
+  }
+
+ save(): void {
+    this.listMgrItemService.updateListMgrItem(this.listMgrItem)
+      .subscribe(() => this.goBack());
   }
 }

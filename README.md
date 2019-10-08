@@ -32,8 +32,16 @@ Application intended to show some basic techniques for writing .Net Core applica
 - Contains Repository CRUD tests
 - Created a list of scripts that can be called from PostMan
 
+#### GoBHHC.WebAPI
+- WebAPI REST service project
+- Uses CORS and allows all origins -- would be bad in production.
+
+### go-bhhc
+- Angular project.  Connects to WebAPI project.
+- NOTE: If using Firefox, be sure to disable ad-blockers
+
 ## Other Stories / Epics that would be worth doing
-- As myself, I would like an Angular Application that will demonstrate a web appliction that exposes the same interface as the Wpf application and communicates through the API so that I can demonstrate javascript patterns 
+- DONE - As myself, I would like an Angular Application that will demonstrate a web appliction that exposes the same interface as the Wpf application and communicates through the API so that I can demonstrate javascript patterns 
 - As a tester, I want the "Rebuild Database" command exposed through the API so I can wrap that functionality in a test
 - As myself, I would like to optionally use the API for communication from the WPF application so that I can demonstrate N-Tier functionality
 - As myself, I would like to implement NLog throughout the application so that I can demonstrate logging patterns

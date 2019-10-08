@@ -11,7 +11,7 @@ import { MessageService } from './message.service';
 @Injectable({ providedIn: 'root' })
 export class ListMgrItemService {
 
-  private listMgrItemsUrl = 'api/listMgrItems';  // URL to web api
+  private listMgrItemsUrl = 'https://localhost:44363/api/ListMgr';  // URL to web api
 
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })

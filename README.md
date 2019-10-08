@@ -38,6 +38,7 @@ Application intended to show some basic techniques for writing .Net Core applica
 
 ### go-bhhc
 - Angular project.  Connects to WebAPI project.
+- ## ***** NOTE ***** - THIS PROJECT BORROWS LIBERALLY FROM THE 'TOUR OF HEROES PROJECT'
 - NOTE: If using Firefox, be sure to disable ad-blockers
 
 ## Other Stories / Epics that would be worth doing

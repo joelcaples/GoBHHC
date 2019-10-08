@@ -13,7 +13,7 @@
 <ul class="listMgrItems">
   <li *ngFor="let listMgrItem of listMgrItems">
     <a routerLink="/detail/{{listMgrItem.id}}">
-      <span class="badge">{{listMgrItem.id}}</span> {{listMgrItem.description}}
+      <span class="badge">{{listMgrItem.id}}</span> <span class="floatytext">{{listMgrItem.description}}</span>
     </a>
     <button class="delete" title="delete listMgrItem"
       (click)="delete(listMgrItem)">x</button>

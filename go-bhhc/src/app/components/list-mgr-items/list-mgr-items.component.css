@@ -67,13 +67,8 @@ button:hover {
 
 button.delete {
   position: relative;
-  left: 704px;
+  left: 673px;
   top: -37px;
   background-color: gray !important;
   color: white;
-}
-
-.listMgrItems .floatytext {
-  position: relative;
-  top: -15px;
 }

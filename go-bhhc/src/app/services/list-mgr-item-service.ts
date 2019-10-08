@@ -70,14 +70,14 @@ export class ListMgrItemService {
   /** POST: add a new listMgrItem to the server */
   addListMgrItem (listMgrItem: ListMgrItem): Observable<ListMgrItem> {
     return this.http.post<ListMgrItem>(this.listMgrItemsUrl, listMgrItem, this.httpOptions).pipe(
-      tap((newListMgrItem: ListMgrItem) => this.log(`added listMgrItem w/ id=${newListMgrItem.id}`)),
+      tap((newListMgrItem: ListMgrItem) => this.log(`added listMgrItem w/ id=${newListMgrItem.listMgrID}`)),
       catchError(this.handleError<ListMgrItem>('addListMgrItem'))
     );
   }
 
   /** DELETE: delete the listMgrItem from the server */
   deleteListMgrItem (listMgrItem: ListMgrItem | number): Observable<ListMgrItem> {
-    const id = typeof listMgrItem === 'number' ? listMgrItem : listMgrItem.id;
+    const id = typeof listMgrItem === 'number' ? listMgrItem : listMgrItem.listMgrID;
     const url = `${this.listMgrItemsUrl}/${id}`;
 
     return this.http.delete<ListMgrItem>(url, this.httpOptions).pipe(
@@ -89,7 +89,7 @@ export class ListMgrItemService {
   /** PUT: update the listMgrItem on the server */
   updateListMgrItem (listMgrItem: ListMgrItem): Observable<any> {
     return this.http.put(this.listMgrItemsUrl, listMgrItem, this.httpOptions).pipe(
-      tap(_ => this.log(`updated listMgrItem id=${listMgrItem.id}`)),
+      tap(_ => this.log(`updated listMgrItem id=${listMgrItem.listMgrID}`)),
       catchError(this.handleError<any>('updateListMgrItem'))
     );
   }

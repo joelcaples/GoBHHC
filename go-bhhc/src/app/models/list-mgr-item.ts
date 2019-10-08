@@ -1,4 +1,4 @@
 export class ListMgrItem {
-    id: number;
+    listMgrID: number;
     description: string;
   }

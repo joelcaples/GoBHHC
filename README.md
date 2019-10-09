@@ -83,3 +83,5 @@ Application intended to show some basic techniques for writing .Net Core applica
 
 - DONE - As myself, I would like an Angular Application that will demonstrate a web appliction that exposes the same interface as the Wpf application and communicates through the API so that I can demonstrate javascript patterns 
 - DONE As a User, I want a refresh button on the Wpf app so that I can retrieve the latest information
+
+- BUG - Fix "Search" box on Angular Dashboard

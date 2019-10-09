@@ -7,7 +7,7 @@ import { AppComponent } from './components/app/app.component';
 import { MessagesComponent } from './components/messages/messages.component';
 import { ListMgrItemsComponent } from './components/list-mgr-items/list-mgr-items.component';
 import { ListMgrItemDetailComponent } from './components/list-mgr-item-detail/list-mgr-item-detail.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
 
 import { AppRoutingModule } from './app-routing.module';
 import { ListMgrItemSearchComponent } from './components/list-mgr-item-search/list-mgr-item-search.component';

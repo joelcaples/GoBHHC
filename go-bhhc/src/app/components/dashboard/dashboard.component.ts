@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ListMgrItem } from '../models/list-mgr-item';
-import { ListMgrItemService } from '../services/list-mgr-item-service';
+import { ListMgrItem } from '../../models/list-mgr-item';
+import { ListMgrItemService } from '../../services/list-mgr-item-service';
 
 @Component({
   selector: 'app-dashboard',

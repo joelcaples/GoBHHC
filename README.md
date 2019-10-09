@@ -85,3 +85,5 @@ Application intended to show some basic techniques for writing .Net Core applica
 - DONE As a User, I want a refresh button on the Wpf app so that I can retrieve the latest information
 
 - BUG - Fix "Search" box on Angular Dashboard
+
+- As an Auditor, I want to keep track of the history of changes (add/edit/delete) in the List table so that I can review history

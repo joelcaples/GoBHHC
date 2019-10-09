@@ -60,6 +60,19 @@ Application intended to show some basic techniques for writing .Net Core applica
 
 - NOTE: If using Firefox, be sure to disable ad-blockers
 
+## How to run
+1. Open <root>/GoBHHC/GoBHHC.sln
+2. "Build All" in Visual Studio
+    - Note that .Net Core 3.0 is a dependency
+3. Set GoBHHC and GoBHHHC.WebAPI as startup projects (using multiple startup projects dialog)
+4. Start solution
+
+5. cd <root>/GoBHHC/go-bhhc/
+6. npm install
+7. ng serve --open
+
+-- You should now have the browser window and a Windows app running.  
+
 ## Other Stories / Epics that would be worth doing
 - As myself, I would like to optionally use the API for communication from the WPF application so that I can demonstrate N-Tier functionality
 - As myself, I would like to implement NLog throughout the application so that I can demonstrate logging patterns

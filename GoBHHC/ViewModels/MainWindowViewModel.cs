@@ -12,7 +12,7 @@ namespace GoBHHC.ViewModels {
 
     public class MainWindowViewModel : INotifyPropertyChanged {
 
-        private IListMgrRepository _repository;
+        private readonly IListMgrRepository _repository;
 
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -31,8 +31,9 @@ namespace GoBHHC.ViewModels {
                 item.PropertyChanged += ListMgrItemUpdated;
             }
 
-            ListMgrItemsCollectionViewSource = new CollectionViewSource();
-            ListMgrItemsCollectionViewSource.Source = ListMgrItemsList;
+            ListMgrItemsCollectionViewSource = new CollectionViewSource {
+                Source = ListMgrItemsList
+            };
             OnPropertyChanged("ListMgrItemsCollectionViewSource");
         }
 
@@ -43,6 +44,15 @@ namespace GoBHHC.ViewModels {
         public List<IListMgrItem> ListMgrItemsList { get; private set; }
 
         public CollectionViewSource ListMgrItemsCollectionViewSource { get; private set;}
+
+        private ICommand _refreshDataCommand;
+        public ICommand RefreshDataCommand {
+            get {
+                return _refreshDataCommand ?? (_refreshDataCommand = new RelayCommand(lmi => {
+                    LoadListMgrItemsList();
+                }));
+            }
+        }
 
 
         private ICommand _deleteCommand;

@@ -88,7 +88,8 @@ export class ListMgrItemService {
 
   /** PUT: update the listMgrItem on the server */
   updateListMgrItem (listMgrItem: ListMgrItem): Observable<any> {
-    return this.http.put(this.listMgrItemsUrl, listMgrItem, this.httpOptions).pipe(
+    const url = `${this.listMgrItemsUrl}/${listMgrItem.listMgrID}`;
+    return this.http.put(url, listMgrItem, this.httpOptions).pipe(
       tap(_ => this.log(`updated listMgrItem id=${listMgrItem.listMgrID}`)),
       catchError(this.handleError<any>('updateListMgrItem'))
     );

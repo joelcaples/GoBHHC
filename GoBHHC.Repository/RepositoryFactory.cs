@@ -23,8 +23,9 @@ namespace GoBHHC.Repository {
 
             IConfigurationRoot configuration = builder.Build();
 
-            var csBuilder = new DbConnectionStringBuilder();
-            csBuilder.ConnectionString = configuration.GetConnectionString(Enum.GetName(typeof(ListMgrEnvironment), environment));
+            var csBuilder = new DbConnectionStringBuilder {
+                ConnectionString = configuration.GetConnectionString(Enum.GetName(typeof(ListMgrEnvironment), environment))
+            };
 
             if (!File.Exists((string)csBuilder["Data Source"]))
                 doCreate = true;

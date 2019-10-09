@@ -1,7 +1,18 @@
 # GoBHHC
-BHHC Demo App
+## BHHC Demo App
 
 Application intended to show some basic techniques for writing .Net Core applications in 2019
+
+## Guidelines for the Project
+- Write an application that displays three or more reasons that you would like to work for BHHC.  Persist the list of reasons and use any means to display them.
+- Show off your in-depth knowledge of a particular subject area or tools.
+- We are interested in seeing your use of patterns and best practices in the design and coding techniques.
+- We want to see the interaction between logical layers: Presentation, Services, & Persistence
+- Feel free to reference specific tools and/or libraries (JQuery, Bootstrap, Kendo UI, AutoMapper, Entity Framework, Dapper, Swagger etc.)
+- Comment the code to assist us in understanding it.
+- Provide sample automated test cases where appropriate.
+- Make sure it is your original work and not the intellectual property of someone else.
+- Avoid reposting the sample code from a book, blog, question answer site, or training site.
 
 ## Tools
 - Visual Studio 2019 Enterprise
@@ -16,7 +27,7 @@ Application intended to show some basic techniques for writing .Net Core applica
 
 ### GoBHHC.Repository.dll (.Net Core 3.0)
 - Uses the Repository Pattern
-- Uses a Facttory to return the Repository
+- Uses a Factory to return the Repository
 - Uses a SQLite database to maintain data
 - Contains a data folder to house the database.  Not something we'd do in production, but adequete for this purpose.
 - Contains methods to build the database schema and insert sample data
@@ -32,13 +43,21 @@ Application intended to show some basic techniques for writing .Net Core applica
 - Contains Repository CRUD tests
 - Created a list of scripts that can be called from PostMan
 
-#### GoBHHC.WebAPI
+### GoBHHC.WebAPI
 - WebAPI REST service project
 - Uses CORS and allows all origins -- would be bad in production.
 
 ### go-bhhc
 - Angular project.  Connects to WebAPI project.
-- ## ***** NOTE ***** - THIS PROJECT BORROWS LIBERALLY FROM THE 'TOUR OF HEROES PROJECT'
+
+<span style="color:red">
+
+## __***************** NOTE *****************__
+
+#### __THIS PROJECT BORROWS LIBERALLY FROM THE angular.io 'TOUR OF HEROES' PROJECT__
+
+</span>
+
 - NOTE: If using Firefox, be sure to disable ad-blockers
 
 ## Other Stories / Epics that would be worth doing
@@ -53,3 +72,5 @@ Application intended to show some basic techniques for writing .Net Core applica
 - As a User, I would like to be prompted for a Description when adding a new Item so that every new item isn't initally defined as "New Item"
 - As a User, I would like to remove the border from the WPF application and add a custom control box so that it presents better
 - As a tester, I would like to improve test coverage to > 80% overall so that I can better ensure quality
+- As a User, I'd like Swagger documentation so that I have clean, standardized details about the project
+- As a User, I'd like the front-end apps to use SignalR or something similar to push changes to the datamodel when changes are made from other interfaces so that each interface is displaying the most up-to-date information.
